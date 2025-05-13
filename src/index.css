@@ -1,0 +1,264 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-mathBuddy-background text-white;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #121212;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4B7289;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #5A8AA3;
+}
+
+.message-container::-webkit-scrollbar {
+  width: 4px;
+}
+
+.message-container::-webkit-scrollbar-track {
+  background: #121212;
+}
+
+.message-container::-webkit-scrollbar-thumb {
+  background: #4B7289;
+  border-radius: 3px;
+}
+
+.message-container::-webkit-scrollbar-thumb:hover {
+  background: #5A8AA3;
+}
+
+/* Math formatting styles - improved for clarity */
+.math-content .MathJax {
+  font-size: 1.15em !important;
+  margin: 0 0.15em !important;
+  display: inline-block !important;
+}
+
+/* Fix for italics in math formulas */
+.math-content .mjx-math {
+  font-style: normal !important;
+}
+
+/* Add proper spacing around math formulas */
+.math-content .mjx-container {
+  margin: 0.25em 0 !important;
+  display: inline-block !important;
+}
+
+/* Ensure proper line height for lines containing math */
+.math-content {
+  line-height: 1.6;
+}
+
+/* Improve math rendering */
+.math-content mjx-container {
+  min-height: 1.2em !important;
+  vertical-align: -0.25em !important;
+}
+
+/* Matrix styling improvements */
+.math-content mjx-mtable {
+  padding: 0.3em !important;
+  margin: 0.5em 0 !important;
+}
+
+/* Matrix cell styling */
+.math-content mjx-mtd {
+  padding: 0.2em 0.4em !important;
+  text-align: center !important;
+}
+
+/* Matrix brackets styling */
+.math-content mjx-stretchy-v {
+  margin-top: -0.1em !important;
+  margin-bottom: -0.1em !important;
+}
+
+/* Matrix rows styling */
+.math-content mjx-mtr {
+  padding: 0.1em 0 !important;
+}
+
+/* Ensure exponents are properly formatted */
+.math-content mjx-texatom[texclass="ORD"] {
+  font-style: normal !important;
+}
+
+/* Fix superscript and subscript formatting */
+.math-content mjx-script {
+  display: inline-block;
+  vertical-align: super;
+  font-size: 0.85em !important;
+}
+
+/* Ensure fractions look correct */
+.math-content mjx-frac {
+  font-size: 1.2em !important;
+  vertical-align: -0.5em !important;
+}
+
+/* Better display for fraction numerators and denominators */
+.math-content mjx-num {
+  display: block !important;
+  text-align: center !important;
+}
+
+.math-content mjx-den {
+  display: block !important;
+  text-align: center !important;
+  border-top: 1px solid !important;
+  padding-top: 0.15em !important;
+}
+
+/* Better spacing around operators */
+.math-content mjx-mo {
+  margin: 0 0.15em !important;
+  font-style: normal !important;
+}
+
+/* Ensure numbers aren't italicized */
+.math-content mjx-mn {
+  font-style: normal !important;
+}
+
+/* Improve fraction rendering */
+.math-content .mjx-frac {
+  text-align: center !important;
+}
+
+/* Add custom styles for matrix multiplication explanations */
+.matrix-explanation {
+  background-color: rgba(155, 135, 245, 0.1);
+  border-left: 3px solid #9b87f5;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem 0;
+}
+
+/* Highlighting for correct answers and rewards */
+.success-highlight {
+  border: 2px solid rgba(72, 187, 120, 0.5) !important;
+  box-shadow: 0 0 8px rgba(72, 187, 120, 0.3) !important;
+}
+
+.message-with-plot {
+  margin-bottom: 1.5rem !important;
+}
+
+.plot-container {
+  border-radius: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.03);
+  padding: 1rem;
+  margin-top: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Add styling for line breaks in chat messages */
+.math-content br {
+  display: block;
+  margin: 0.5em 0;
+  content: " ";
+}
